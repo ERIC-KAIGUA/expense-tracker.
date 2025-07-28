@@ -7,7 +7,7 @@ import { GoTrash } from "react-icons/go";
 import { AiOutlineRise } from "react-icons/ai";
 import { RxHamburgerMenu } from "react-icons/rx";
 import IncomeForm from "../../forms/IncomeForm";
-import Modal from "../../components/modal";
+import Modal from "../../components/Modal";
 import toast from "react-hot-toast";
 import EmojiPicker from 'emoji-picker-react';
 import IncomeCard from "../../components/Incomecard";

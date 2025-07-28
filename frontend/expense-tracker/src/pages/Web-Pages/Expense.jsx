@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../../components/Sidebar";
 import Linechart from "../../components/Linechart";
-import Modal from "../../components/modal";
+import Modal from "../../components/Modal";
 import ExpenseForm from "../../forms/ExpenseForm";
 import toast from "react-hot-toast";
 import { IoDownloadOutline } from "react-icons/io5";
