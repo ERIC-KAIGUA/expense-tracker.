@@ -90,7 +90,7 @@ const Login = () =>{
                         <h5 className="password-label">Password</h5>
                         <Input type="password" name="password" value={formData.password} placeholder="Password"  required onChange={onChange}></Input>
                         <button type="submit" id="login">Login</button>
-                        <p>Don't have an account? <a href={'/Signup'} >Sign-Up</a></p>
+                        <p>Dont have an account? <a href={'/Signup'} >Sign-Up</a></p>
                     </form>
                     </div>
                 </div>
