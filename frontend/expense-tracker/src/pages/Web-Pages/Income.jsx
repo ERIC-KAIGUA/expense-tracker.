@@ -10,7 +10,7 @@ import IncomeForm from "../../forms/IncomeForm";
 import Modal from "../../components/Modal";
 import toast from "react-hot-toast";
 import EmojiPicker from 'emoji-picker-react';
-import IncomeCard from "../../components/Incomecard";
+import IncomeCard from "../../components/IncomeCard";
 
  
 const notify = () =>toast('Downloaded Successfully!')
