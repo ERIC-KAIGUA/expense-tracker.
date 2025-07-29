@@ -7,6 +7,8 @@ import cors from 'cors'
 import jwt from 'jsonwebtoken';
 import crypto from 'crypto';
 import xlsx from 'xlsx';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 import mongoose, { Mongoose } from 'mongoose';
 import expenseRouter from "./expense/expenseRoute.js";
 import incomeRouter from "./income/incomeRoute.js";
@@ -23,6 +25,8 @@ mongoose
 
 
 const PORT = process.env.PORT || 3000;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 console.log('Server.js startup - JWT_SECRET_KEY:', process.env.JWT_SECRET_KEY);
 
 if (!jwtSecret) {
@@ -37,13 +41,14 @@ app.use(cors({
     methods:["GET","POST","PUT","DELETE"],
     allowedHeaders: ["Content-Type","Authorization","x-auth-token"],
 }));
+app.use(express.static(path.join(__dirname, '../frontend/express-tracker')))
 app.use(userRouter)
 app.use(incomeRouter)
 app.use(expenseRouter)
 app.use(dashboardRouter)
 
 app.get('/', (req, res) => {
-  res.send('Welcome to my Express.js application!');
+ res.sendFile(path.join(__dirname,'../frontend/express-tracker','index.html'))
 });
 app.listen(PORT,()=>{
     console.log(`Running on PORT ${PORT}`)
