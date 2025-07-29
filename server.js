@@ -47,7 +47,7 @@ app.use(incomeRouter)
 app.use(expenseRouter)
 app.use(dashboardRouter)
 
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
  res.sendFile(path.join(__dirname,'frontend expense-tracker', 'dist', 'index.html'))
 });
 app.listen(PORT,()=>{
