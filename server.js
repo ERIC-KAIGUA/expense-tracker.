@@ -41,6 +41,10 @@ app.use(userRouter)
 app.use(incomeRouter)
 app.use(expenseRouter)
 app.use(dashboardRouter)
+
+app.get('/', (req, res) => {
+  res.send('Welcome to my Express.js application!');
+});
 app.listen(PORT,()=>{
     console.log(`Running on PORT ${PORT}`)
 });
