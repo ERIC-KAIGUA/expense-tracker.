@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server.js",
     "build": "npm install && npm install --prefix frontend/expense-tracker && npm run build --prefix frontend/expense-tracker",
-    "start": "cross-env NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js"
   },
   "keywords": [],
   "author": "",
