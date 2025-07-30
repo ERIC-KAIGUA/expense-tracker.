@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "dev": "cross-env NODE_ENV=development nodemon server.js",
+    "build": "npm install && npm install --prefix frontend/expense-tracker && npm run build --prefix frontend/expense-tracker",
+    "start": "cross-env NODE_ENV=production node server.js"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +23,7 @@
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
+    "cross-env": "^10.0.0",
     "nodemon": "^3.1.10"
   },
   "type": "module"

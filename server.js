@@ -26,7 +26,7 @@ mongoose
 
 const PORT = process.env.PORT || 3000;
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __dirname = path.resolve();
 console.log('Server.js startup - JWT_SECRET_KEY:', process.env.JWT_SECRET_KEY);
 
 if (!jwtSecret) {
@@ -41,15 +41,19 @@ app.use(cors({
     methods:["GET","POST","PUT","DELETE"],
     allowedHeaders: ["Content-Type","Authorization","x-auth-token"],
 }));
-app.use(express.static(path.join(__dirname, '../frontend/expense-tracker', 'dist')))
 app.use(userRouter)
 app.use(incomeRouter)
 app.use(expenseRouter)
 app.use(dashboardRouter)
 
-app.use('/', (req, res) => {
- res.sendFile(path.join(__dirname,'../frontend/expense-tracker', 'dist', 'index.html'))
-});
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static(path.join(__dirname, '/frontend/expense-tracker/dist')))
+    app.use("/", (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend/expense-tracker', 'dist', 'index.html'));
+});    
+}
+
+
 app.listen(PORT,()=>{
     console.log(`Running on PORT ${PORT}`)
 });
