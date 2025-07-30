@@ -19,7 +19,7 @@ const app = express()
 
 const jwtSecret = process.env.JWT_SECRET_KEY;
 mongoose
-.connect(process.env.MONGO_URI, {})
+.connect(process.env.MONGO_URI,)
 .then(()=>console.log("Connected to Database"))
 .catch((err)=>console.log(`err:${err}`))
 
