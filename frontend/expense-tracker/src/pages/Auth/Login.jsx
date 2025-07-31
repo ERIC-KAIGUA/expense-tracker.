@@ -32,12 +32,12 @@ const Login = () =>{
     
     // Validate inputs
     if (!email || !password) {
-      setError('Please enter both email and password');
+      console.log('Please enter both email and password');
       return;
     }
 
         try {
-            const response = await fetch('https://expense-tracker-ec7u.onrender.com', { 
+            const response = await fetch('https://expense-tracker-ec7u.onrender.com/login', { 
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -47,6 +47,8 @@ const Login = () =>{
             console.log('Response status:', response.status);
     console.log('Response ok:', response.ok);
 
+            const text = await response.text();
+            console.log('Raw response:', text);
              const data = await response.json();
              console.log('Full response data:', data);
     console.log('data.token:', data.token);

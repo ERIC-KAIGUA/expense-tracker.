@@ -44,17 +44,17 @@ app.use(cors({
     methods:["GET","POST","PUT","DELETE"],
     allowedHeaders: ["Content-Type","Authorization","x-auth-token"],
 }));
-app.use(userRouter)
-app.use(incomeRouter)
-app.use(expenseRouter)
-app.use(dashboardRouter)
 
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static(path.join(__dirname, '/frontend/expense-tracker/dist')))
-    app.use("/", (req, res) => {
+    app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, 'frontend/expense-tracker', 'dist', 'index.html'));
 });    
 }
+app.use('/api',userRouter)
+app.use('/api',incomeRouter)
+app.use('/api',expenseRouter)
+app.use('/api',dashboardRouter)
 
 
 app.listen(PORT,()=>{

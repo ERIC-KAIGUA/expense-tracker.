@@ -23,7 +23,7 @@ const Signup = () => {
             e.preventDefault();
     
             try {
-                const response = await fetch('https://expense-tracker-ec7u.onrender.com', { 
+                const response = await fetch('https://expense-tracker-ec7u.onrender.com/signup', { 
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
