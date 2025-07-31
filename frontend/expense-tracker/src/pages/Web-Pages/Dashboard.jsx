@@ -35,7 +35,7 @@ const Dashboard = () => {
             alert("You have not logged in yet!");
             return;
         }
-        const response = await fetch('https://expense-tracker-fdez.onrender.com',{
+        const response = await fetch('https://expense-tracker-ec7u.onrender.com',{
             method:'GET',
             headers:{
                 'Content-Type': 'application.json',

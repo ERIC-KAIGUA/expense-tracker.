@@ -37,7 +37,7 @@ const notify = () =>toast('Downloaded Successfully!')
     }
 
     try {
-      const response = await fetch('https://expense-tracker-fdez.onrender.com', {
+      const response = await fetch('https://expense-tracker-ec7u.onrender.com', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ const notify = () =>toast('Downloaded Successfully!')
       return;
     }
 
-    const response = await fetch('https://expense-tracker-fdez.onrender.com', {
+    const response = await fetch('https://expense-tracker-ec7u.onrender.com', {
       method: 'GET',
       headers:{
           'Content-Type': 'application/json',
@@ -137,7 +137,7 @@ const notify = () =>toast('Downloaded Successfully!')
         return;
       }
        console.log(`Attempting to delete income with ID: ${idToDelete}`);
-      const response = await fetch(`https://expense-tracker-fdez.onrender.com/${idToDelete}`,{
+      const response = await fetch(`https://expense-tracker-ec7u.onrender.com/${idToDelete}`,{
         method:'DELETE',
         headers:{
           'Content-Type': 'application/json',
@@ -178,7 +178,7 @@ const notify = () =>toast('Downloaded Successfully!')
         return;
       }
       console.log('New income data:', newIncome);
-      const response = await fetch('https://expense-tracker-fdez.onrender.com',{
+      const response = await fetch('https://expense-tracker-ec7u.onrender.com',{
         method:'POST',
         headers:{
           'Content-Type': 'application/json',

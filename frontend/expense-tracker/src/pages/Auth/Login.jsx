@@ -37,7 +37,7 @@ const Login = () =>{
     }
 
         try {
-            const response = await fetch('https://expense-tracker-fdez.onrender.com', { 
+            const response = await fetch('https://expense-tracker-ec7u.onrender.com', { 
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
