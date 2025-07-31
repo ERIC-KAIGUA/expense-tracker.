@@ -47,7 +47,7 @@ const Login = () =>{
             console.log('Response status:', response.status);
     console.log('Response ok:', response.ok);
 
-            const data = await response.json();
+             const data = await response.json();
              console.log('Full response data:', data);
     console.log('data.token:', data.token);
     console.log('data.msg:', data.msg);

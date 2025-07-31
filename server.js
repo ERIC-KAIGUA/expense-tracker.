@@ -37,7 +37,10 @@ if (!jwtSecret) {
 app.use(express.json());
 console.log('CORS Origin being used:', process.env.CLIENT_URL || "*");
 app.use(cors({
-    origin: process.env.CLIENT_URL || "*",
+    origin:(origin,callback)=>{
+        const allowedOrigins =[process.env.CLIENT_URL || "https://expense-tracker-fdez.onrender.com"];
+         callback(null, allowedOrigins.includes(origin)? origin:false);
+        },
     methods:["GET","POST","PUT","DELETE"],
     allowedHeaders: ["Content-Type","Authorization","x-auth-token"],
 }));
