@@ -36,7 +36,7 @@ const Expense = () =>{
      }
  
      try {
-       const response = await fetch('https://expense-tracker-ec7u.onrender.com/getAllExpenses', {
+       const response = await fetch('https://expense-tracker-ec7u.onrender.com/api/getAllExpenses', {
          method: 'GET',
          headers: {
            'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ const Expense = () =>{
       return;
     }
 
-    const response = await fetch('https://expense-tracker-ec7u.onrender.com/downloadExpenseExcel', {
+    const response = await fetch('https://expense-tracker-ec7u.onrender.com/api/downloadExpenseExcel', {
       method: 'GET',
       headers:{
           'Content-Type': 'application/json',
@@ -146,7 +146,7 @@ const Expense = () =>{
       }
       console.log(`${token}`)
        console.log(`Attempting to delete expense with ID: ${idToDelete}`);
-      const response = await fetch(`https://expense-tracker-ec7u.onrender.com/delete-expense/${idToDelete}`,{
+      const response = await fetch(`https://expense-tracker-ec7u.onrender.com/delete-expense/api/${idToDelete}`,{
         method:'DELETE',
         headers:{
           'Content-Type': 'application/json',
@@ -189,7 +189,7 @@ const Expense = () =>{
       }
       
        console.log('New expense data:', newExpense);
-      const response = await fetch('https://expense-tracker-ec7u.onrender.com/add-expense',{
+      const response = await fetch('https://expense-tracker-ec7u.onrender.com/api/add-expense',{
         method:'POST',
         headers:{
           'Content-Type': 'application/json',
