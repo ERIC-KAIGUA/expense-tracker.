@@ -146,7 +146,7 @@ const Expense = () =>{
       }
       console.log(`${token}`)
        console.log(`Attempting to delete expense with ID: ${idToDelete}`);
-      const response = await fetch(`https://expense-tracker-ec7u.onrender.com/delete-expense/api/${idToDelete}`,{
+      const response = await fetch(`https://expense-tracker-ec7u.onrender.com/api/delete-expense/${idToDelete}`,{
         method:'DELETE',
         headers:{
           'Content-Type': 'application/json',

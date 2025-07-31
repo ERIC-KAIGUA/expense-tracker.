@@ -137,7 +137,7 @@ const notify = () =>toast('Downloaded Successfully!')
         return;
       }
        console.log(`Attempting to delete income with ID: ${idToDelete}`);
-      const response = await fetch(`https://expense-tracker-ec7u.onrender.com/delete-income/api/${idToDelete}`,{
+      const response = await fetch(`https://expense-tracker-ec7u.onrender.com/api/delete-income/api/${idToDelete}`,{
         method:'DELETE',
         headers:{
           'Content-Type': 'application/json',

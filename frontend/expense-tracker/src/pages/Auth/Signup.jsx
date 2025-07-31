@@ -36,7 +36,7 @@ const Signup = () => {
                 if (response.ok) { 
                     console.log('SignUp successful!',data);
                     
-                    navigate('/Login'); 
+                    navigate('/'); 
                 } else {
                     setError(data.msg || 'SignUp failed. Please check your credentials.');
                     console.error('SignUp error:', data);
