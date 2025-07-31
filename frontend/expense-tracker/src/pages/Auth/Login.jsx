@@ -49,8 +49,14 @@ const Login = () =>{
 
             const text = await response.text();
             console.log('Raw response:', text);
-             const data = await response.json();
-             console.log('Full response data:', data);
+            let data;
+        try {
+            data = text ? JSON.parse(text) : {}; 
+        } catch (parseError) {
+            console.error('Failed to parse JSON:', parseError);
+            data = { msg: 'Invalid response format' };
+        }
+     console.log('Full response data:', data);
     console.log('data.token:', data.token);
     console.log('data.msg:', data.msg);
 
