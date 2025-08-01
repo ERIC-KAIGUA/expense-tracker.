@@ -13,7 +13,7 @@ const Piechart=({summaryData})=> {
   return (
    <div className="responsive-container">
       <PieChart width={500} height={500}>
-        <Pie dataKey="value" data={chartData} nameKey="name" cx={350} cy={115} innerRadius={70} outerRadius={120} fill="#8884d8">
+        <Pie dataKey="value" data={chartData} nameKey="name" cx={350} cy={105} innerRadius={70} outerRadius={120} fill="#8884d8">
           {chartData.map((entry, index) => (
               <Cell 
                 key={`cell-${index}`} 
