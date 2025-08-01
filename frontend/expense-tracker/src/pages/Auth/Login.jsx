@@ -57,14 +57,7 @@ const Login = () =>{
             data = { msg: 'Invalid response format' };
         }
      console.log('Full response data:', data);
-    console.log('data.token:', data.token);
-    console.log('data.msg:', data.msg);
-
-    console.log('Possible token locations:');
-    console.log('- data.token:', data.token);
-    console.log('- data.Token:', data.Token);
-    console.log('- data.JWT:', data.JWT);
-    console.log('- data.accessToken:', data.accessToken)
+    
 
             if (response.ok) { // Check if the response status is 2xx (success)
                 // Backend successfully sent a token
